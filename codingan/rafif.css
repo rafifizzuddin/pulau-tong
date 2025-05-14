@@ -1,0 +1,70 @@
+body { 
+    background-image: url("bgpt.jpg");
+    background-size: cover;
+}
+.q {
+    text-align: center;
+    color: white;
+}
+.bg1 {
+    background-color : blue;
+}
+.bg2 {
+    
+}
+.menu {
+    width: 50px;
+    height: 50px;
+}
+.hidden {
+    display: none;
+}
+.logopt {
+    width : 50px;   
+    float: right;
+    margin: 10px;
+}
+.menulist {
+    text-align: center;
+}
+.bagianatas {
+    background-color: rgb(95, 95, 206);
+}
+ {
+    margin: 10px;
+}
+.bglist {
+    background-color: rgb(46, 112, 211);
+    color: antiquewhite;
+    border: 1px solid;
+}
+.anggotapt {
+    max-width: 100%;
+    height: auto;
+}
+.beranda {
+    border: solid 1px;
+}
+.profil {
+    border : solid 1px;
+}
+.sejarah {
+    border :solid 1px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+}
+.logolink {
+    width: 30px;
+    margin: 10px;
+}
+.galeri {
+    height: 100%;
+    width: 100%;
+}
+.logoig {
+    width: 20px;
+}
+.logowa {
+    width: 20px;
+}
