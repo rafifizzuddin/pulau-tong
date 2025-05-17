@@ -1,175 +1,357 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>PULAU TONG</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUHAMMAD RAFIF IZZUDDIN</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .bgteks {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .baratas {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background-color: grey;
+            padding: 10px;
+            gap: 10px;
+        }
+        .baratas img,
+        .baratas a {
+            width: 30px;
+        }
+        .judulatas {
+            flex: 1 1 100%;
+            text-align: center;
+            color: white;
+        }
+        .pencarian {
+            flex: 1;
+            min-width: 150px;
+            height: 30px;
+        }
+        .menu-dropdown {
+            position: absolute;
+            top: 70px;
+            left: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 1000;
+        }
+        .menu-dropdown ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-dropdown li {
+            margin: 8px 0;
+        }
+        .menu-dropdown a {
+            text-decoration: none;
+            color: #333;
+        }
+        .menu-dropdown a:hover {
+            color: #007BFF;
+        }
+
+        .kontainerberanda,
+        .kontainerprofil,
+        .containerperjalanan {
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+        }
+        .kontainerberanda {
+            background-image: url('images/backgroundsurabaya.jpg');
+        }
+        .kontainerprofil {
+            background-image: url('images/backgroundtuban.jpg');
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        .containerperjalanan {
+            background-image: url('images/backgroundrengel1.jpg');
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        .revisi, .rafifjpg, .motor {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .fotoberanda, .kontainerprofil, .containerperjalanan {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .keterangan, .teksprofil, .innerperjalanan {
+            flex: 1;
+            min-width: 250px;
+        }
+        .judulberanda, .judul, .judulperjalanan, .judulkontak {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+        .kontakbox {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+        }
+        .info-kontak, .sosmed-kontak {
+            flex: 1;
+            min-width: 250px;
+        }
+        .tentang {
+            padding: 20px;
+            background-color: #fdfdfd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        .tombolperjalanan {
+            padding: 10px 25px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 999px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        @media screen and (max-width: 768px) {
+            .judulberanda, .judulperjalanan, .judulkontak {
+                font-size: 1.5rem;
+            }
+            .baratas {
+                justify-content: center;
+            }
+            .baratas img,
+            .baratas a {
+                width: 25px;
+            }
+            .pencarian {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+
+        .baratas {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* agar tersebar di bar */
+        padding: 10px;
+        background-color: grey;
+        flex-wrap: nowrap; /* agar tidak wrap */
+        gap: 15px;
+        }
+
+        .logo-group,
+        .icon-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        }
+
+        .pencarian {
+        flex-grow: 1; /* mengambil sisa ruang */
+        max-width: 300px;
+        height: 35px;
+        padding: 5px 10px;
+        border-radius: 6px;
+        border: none;
+        font-size: 16px;
+        }
+
+        .logo-group img,
+        .icon-group img {
+        height: 45px;
+        width: auto;
+        cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+        .baratas {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .pencarian {
+            flex-grow: 1;
+            max-width: 100%;
+            margin: 5px 0;
+        }
+
+        .logo-group img,
+        .icon-group img {
+            height: 30px;
+        }
+        }
+
+
+
+        .logo-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-group img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+  display: block;
+}
+.searchbar {
+    display: flex; align-items: center; gap: 5px;
+}
+.cari {
+    height: 40px;
+    width: 40px;
+}
+    </style>
 </head>
 <body>
+    <!-- Bar Atas -->
+    <div class="baratas">
+        <div class="logo-group">
+            <img class="logo" src="images/menu.png" onclick="toggleMenu()">
+            <a href="https://www.instagram.com/m.rafifizzuddin"><img class="logoig" src="images/logoig.png"></a>
+            <a href="http://wa.me/6285156568679"><img class="logowa" src="images/logowa.png"></a>
+            <img class="logolink" src="images/link.png">
+        </div>
 
-    <div class="bg1">
-    <h1 class="q"> PULAU TONG S4</h1>
-    </div>
-    <div class="bagianatas">
-    <!-- Gambar yang diklik -->
-<img src="images/menu.png.png" alt="Menu" id="menuButton" width="50">
-<a href="https://www.instagram.com/pulautong?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-<img src="images/logoig.png" width="50">
-</a>
-<a href="https://tinyurl.com/PetalMan-eBooks-Access">
-<img class="logolink" src="images/link.png">
-</a>
-<img class="logopt" src="images/logopt.png">
-<br>
-<!-- Menu yang akan muncul -->
-<div class="menulist" id="menuBar" class="hidden">
-        <a class="bglist" href="#beranda">BERANDA</a></li>
-        <a class="bglist" href="#profil">PROFIL</a></li>
-        <a class="bglist" href="#kontak">KONTAK</a></li>
-        <a class="bglist" href="#sejarah">SEJARAH</a></li>
-        <a class="bglist" href="#">ANGGOTA</a></li>
-    <br>
-</div>
-</div>
-<script>
-    const menuButton = document.getElementById('menuButton');
-    const menuBar = document.getElementById('menuBar');
+        <div class="searchbar">
+        <input placeholder="masukkan pencarian" class="pencarian">
+        <img class="cari" src="images/search.png" alt="Search Icon">
+        </div>
 
-    menuButton.addEventListener('click', () => {
-        menuBar.classList.toggle('hidden'); // munculkan atau sembunyikan menu
-    });
-</script>
-
-    <br>
-    <div class="bg2">
-        <div id="beranda" class="beranda">
-    <h2>
-        BERANDA
-    </h2>
-    🌴 Pulau TONG Friendship
-Komunitas Persahabatan Sejak 19 November 2020
-<br>Dibentuk oleh 12 sahabat, dengan 4 admin yang memimpin, Pulau TONG adalah tempat berbagi cerita, tawa, dan kenangan tak terlupakan.
-<br>
-    </div>
-    <br>
-    <div id="profil" class="profil">
-    <h2>PROFIL</h2>
-    <img class="anggotapt" src="images/anggota.jpg">
+        <div class="icon-group">
+            <img class="sharelogo" src="images/sharelogo.svg" alt="Share Icon">
+            <img class="logoabout" src="images/logoabout.png" alt="About Icon">
+        </div>
     </div>
 
-<br>
 
-    <h2 id="kontak" >KONTAK</h2>
-    1. M RIDHO ST.<br>
-    <img class="logoig" src="images/logowa.png"> 0813-9095-1298
-    <br>
-    <img class="logowa" src="images/logoig.png"> 
-    <br>
-    <br>
-    2. M RAFIF IZD. <br>
-    <img class="logoig" src="images/logowa.png"> 0851-5656-8679
-    <br>
-    <img class="logowa" src="images/logoig.png">
-    <br>
+    <!-- Menu Dropdown -->
+    <div id="menuDropdown" class="menu-dropdown" style="display: none;">
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#jejakperjalananku">Jejak Perjalanan</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+        </ul>
+    </div>
 
-     <br>
-     3. DAFA AQILA<br>
-     <img class="logoig" src="images/logowa.png"> 0851-7956-2922
-    <br>
-    <img class="logowa" src="images/logoig.png">
-    <br>
+    <!-- Beranda -->
+    <div id="beranda" class="kontainerberanda">
+        <h1 class="judulberanda"><span class="bgtekss">BERANDA</span></h1>
+        <div class="fotoberanda">
+            <img class="revisi" src="images/rafif.jpg" alt="Foto Rafif">
+            <div class="keterangan">
+                <h2 class="judulisiberanda"><span class="bgtekss">M RAFIF IZZUDDIN</span></h2>
+                <h3><span class="bgtekss">Programmer | Photographer | TECH Enthusiast</span></h3>
+                <p><span class="bgtekss">Halo! Saya Rafif, pelajar asal Bojonegoro yang memiliki minat besar di bidang teknologi, desain web, dan multimedia. Saya suka belajar hal baru dan membuat karya digital yang bermanfaat.</span></p>
+            </div>
+        </div>
+    </div>
 
-    <br>
-    4. BERYL ADR.<br>
-    <img class="logoig" src="images/logowa.png"> 0895-1376-5923
-    <br>
-    <img class="logowa" src="images/logoig.png">
-    <br>
+    <!-- Profil -->
+    <div id="profil" class="kontainerprofil">
+        <img class="rafifjpg" src="images/rafifselfie.jpg" alt="Foto Rafif">
+        <div class="teksprofil">
+            <h1 class="judul bgtekss">MUHAMMAD RAFIF IZZUDDIN</h1>
+            <h3 class="bgtekss">🧑‍💼 Tentang Saya</h3>
+            <p class="bgtekss">
+                <strong>Lengkap:</strong> Muhammad Rafif Izzuddin<br>
+                <strong>Nama Panggilan:</strong> Rafif<br>
+                <strong>Tempat, Tanggal Lahir:</strong> Bojonegoro, 14 November 2007<br>
+                <strong>Jenis Kelamin:</strong> Laki-laki<br>
+                <strong>Kewarganegaraan:</strong> Indonesia<br>
+                <strong>Status:</strong> Belum Menikah<br>
+                <strong>Agama:</strong> Islam<br>
+                <strong>Alamat:</strong> JL. Meliwis Putih No.8 Ngrowo Bojonegoro<br>
+                <strong>Email:</strong> rafif.yohana@gmail.com<br>
+                <strong>No. HP / WhatsApp:</strong> 0851-5656-8679<br>
+                <strong>Website:</strong> www.johndoe.com
+            </p>
+        </div>
+    </div>
 
-    <br>
-    5. ABBIYU<br>
-    <img class="logoig" src="images/logowa.png"> 0822-6039-7399
-    <br>
-    <img class="logowa" src="images/logoig.png">
-    <br>
+    <!-- Jejak Perjalanan -->
+    <div id="jejakperjalananku" class="containerperjalanan">
+        <img class="motor" src="images/motor.jpg">
+        <div class="innerperjalanan">
+            <h2 class="judulperjalanan bgteks">AYO IKUTI PERJALANANKU 🏍️</h2>
+            <p class="keteranganperjalanan bgteks">
+                Perjalanan bukan hanya soal destinasi, tapi juga tentang pengalaman yang membentuk siapa kita. Lewat halaman ini, aku ingin berbagi potongan kisah dari berbagai tempat yang telah kulalui, dari pegunungan yang sunyi sampai pantai yang ramai.
+            </p>
+            <a class="tombolprj" href="html/perjalanan.html">
+                <br>
+                <button class="tombolperjalanan">Ikuti Perjalananku</button>
+            </a>
+        </div>
+    </div>
 
-    <br>
-    6. ADIT<br>
-    <img class="logoig" src="images/logowa.png">0812-3151-9827
-    <br>
-    <img class="logowa" src="images/logoig.png">
-    <br>
+    <!-- Kontak -->
+    <h1 id="kontak" class="judulkontak">KONTAK SAYA</h1>
+    <div class="kontakbox">
+        <div class="info-kontak">
+            <h3>📞 Hubungi Saya</h3>
+            <p>
+                ✉️ <strong>Email:</strong> rafif.yohana@gmail.com<br>
+                📱 <strong>WhatsApp:</strong> 0851-5656-8679<br>
+                📍 <strong>Domisili:</strong> Bojonegoro, Jawa Timur
+            </p>
+        </div>
+        <div class="sosmed-kontak">
+            <h3>🌐 Media Sosial</h3>
+            <ul>
+                <li>📸 Instagram: <a href="https://www.instagram.com/m.rafifizzuddin?igsh=MTdpOHZmZmd3aDFsag==" target="_blank">@m.rafifizzuddin</a></li>
+                <li>🔗 LinkedIn: <a href="https://linkedin.com/in/rafif" target="_blank">linkedin.com/in/rafif</a></li>
+                <li>▶️ YouTube: <a href="https://www.youtube.com/@akujagoan6972" target="_blank">AKU JAGOAN</a></li>
+            </ul>
+        </div>
+    </div>
 
-    <br>
-    7. ARYA<br>
-    <img class="logoig" src="images/logowa.png"> 0858-5055-7658
-    <br>
-    <img class="logowa" src="images/logoig.png">
-    <br>
-
-    <br>
-   8. DAFFA RAFI<br>
-    <img class="logoig" src="images/logowa.png"> 0823-4219-3971
-    <br>
-    <img class="logowa" src="images/logoig.png">
-    <br>
-
-    <br>
-    9. FAREL S.<br>
-    <img class="logoig" src="images/logowa.png"> 0859-4293-5078
-    <br>
-    <img class="logowa" src="images/logoig.png">
-    <br>
-
-    <br>
-    10. RHOZYQIN <br>
-    <img class="logoig" src="images/logowa.png"> 0856-4830-2986
-    <br>
-    <img class="logowa" src="images/logoig.png">
-    <br>
-
-    <br>
-    11. ZAVI <br>
-    <img class="logoig" src="images/logowa.png"> 0856-4894-0617
-    <br>
-    <img class="logowa" src="images/logoig.png">
-    <br>
-    <BR>
-    <div id="sejarah" class="sejarah">
-    <h2>
-        SEJARAH PULAU TONG
-    </h2>
-    <p>
-    * Grup Pulau Tong (Ver. Original) 19 Nov 2020 - Lost Media ☠. <br>
-* Grup Pulau Tong 2 (Chapter 2) 21 Dec 2020 - berubah nama jadi "Alumni 6A Kadsabo 2020" sebelum bubar. <br>
-* Grup Pulau Tong 3 25 Dec 2020 - berubah nama jadi P sebelum bubar.<br>
-* Grup Pulau Tong S4 10 Jan 2021 - grup terakhir yang didirikan. (Meskipun ini grup Pulau Tong terakhir, namun grup ini pernah terpecah sampai 8 kali ☠)<br>
-<br>
-Grup Pecahan Pulau Tong <br>
-* Alumni Kelas A - Grup saingan "Alumni 6A Kadsabo 2020" / Pulau Tong CHAPTER 2 yang didirikan Rayhan, masih awet sampai kini.<br>
-* Jangan Lupa Bernyanyi - Grup khusus untuk berfantasi. Tercatat hanya 4 orang yang pernah merasakan grup ini. <br>
-* Jangan Lupa Bernyanyi V2 - Pecahan dari Jangan Lupa Bernyanyi, disini anggota grup berkurang 1, dan tidak digantikan oleh siapapun sehingga eksklusivitas grup ini masih terjaga. <br>
-* Jangan Lupa Bernyanyi V3 - Pecahan dari Versi Sebelumnya, anggota yang ditambahkan masih sama.<br>
-* Jangan Lupa Bernyanyi V4 - Pecahan dari Versi Sebelumnya, anggota yang ditambahkan masih sama.<br>
-* Jangan Lupa Bernyanyi V5 - Pecahan dari Versi Sebelumnya, anggota yang ditambahkan masih sama.<br>
-* Jangan Lupa Bernyanyi V6 - Pecahan dari Versi Sebelumnya, anggota yang ditambahkan masih sama.<br>
-* Jangan Lupa Bernyanyi V7 - Pecahan dari Versi Sebelumnya, anggota yang ditambahkan masih sama.<br>
-* Jangan Lupa Bernyanyi V8 - Pecahan dari Versi Sebelumnya, anggota yang ditambahkan masih sama.<br>
-* Bulukangtis 🏸 - Dulu grup ini bernama "Sepedahan" namun karena seiring berjalannya waktu, anggota grup ini sudah tidak pernah sepedahan bersama. Beberapa diantaranya sudah mulai bisa mengendarai motor sehingga grup ini mengganti nama sekaligus agenda di dalamnya. Grup ini dibubarkan karena tragedi malam itu ☠. <br>
-* Komunitas Orang Pulau - Komunitas grup yang diciptakan untuk menguji fitur baru WhatsApp waktu itu. <br>
-* Pulau Tong Sequel - Komunitas grup yang berisikan grup "Bulukangtis 🏸" dan "Pulau Tong S4". Dihapus sejak grup "Bulukangtis 🏸" dibubarkan <br>
+    <!-- Tentang Saya -->
+    <h1 id="tentang" class="judul judulkontak">TENTANG SAYA</h1>
+    <p class="tentang">
+        Halo! Saya <strong>Muhammad Rafif Izzuddin</strong>, pelajar SMA dari <strong>SMAN 4 Bojonegoro</strong> yang antusias dalam dunia teknologi dan petualangan. Saya aktif dalam <strong>Olimpiade Sains Nasional</strong> dan senang mengeksplorasi hal-hal baru. Minat saya mencakup fotografi, teknologi, pemrograman, dan berpetualang. <br><br>
+        Saya percaya teknologi bisa membantu banyak orang. Tujuan saya adalah menjadikan teknologi solusi yang mendukung kehidupan manusia. Pengalaman saya termasuk membuat <em>website pertemanan</em> dan mewakili sekolah di <strong>SMA Awards</strong> bidang <em>fotografi</em>.
     </p>
-    </div>
-    </div>
-<br>
-<div>
-<h2>GALERI</h2>
-<img class="galeri" src="images/foto1.jpg">
-<br>
-<img class="galeri" src="images/foto2.jpg">
-<br>
-<img class="galeri" src="images/foto3.jpg">
-<br>
-<img class="galeri" src="images/foto4.jpg">
-</div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menuDropdown");
+            menu.style.display = menu.style.display === "none" ? "block" : "none";
+        }
+        window.addEventListener("click", function (e) {
+            const menu = document.getElementById("menuDropdown");
+            const logo = document.querySelector(".logo");
+            if (!menu.contains(e.target) && !logo.contains(e.target)) {
+                menu.style.display = "none";
+            }
+        });
+    </script>
+</body>
 </html>
